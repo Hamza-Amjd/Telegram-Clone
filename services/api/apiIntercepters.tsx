@@ -13,6 +13,7 @@ export const refresh_tokens = async () => {
     const response = await axios.post("${BASE_URL}/oauth/refresh-token", {
       refresh_token: refreshToken,
     });
+    console.log("refreshToken",response.data);
     const new_access_token = response.data.access_token;
     const new_refresh_token = response.data.refresh_token;
     tokenStorage.set("accessToken", new_access_token);
@@ -23,18 +24,19 @@ export const refresh_tokens = async () => {
     tokenStorage.clearAll();
     resetAndNavigate("/(auth)/signin");
   }
-
-  appAxios.interceptors.request.use(async (config) => {
+}
+  appAxios.interceptors.request.use(async config => {
     const accessToken = tokenStorage.getString("accessToken");
     if (accessToken) {
       config.headers.Authorization = `Bearer ${accessToken}`;
     }
     return config;
   });
+
   appAxios.interceptors.response.use(
-    (response) => response,
+    response => response,
     async (error) => {
-      if (error.response && error.response.status == 401) {
+      if (error.response && error.response.status === 401) {
         try {
           const newAccessToken = await refresh_tokens();
           if (newAccessToken) {
@@ -51,4 +53,4 @@ export const refresh_tokens = async () => {
       return Promise.reject(error);
     }
   );
-};
+

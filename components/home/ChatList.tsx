@@ -2,14 +2,14 @@ import { FlatList, RefreshControl } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import EmptyComponent from './EmptyComponent'
 import ChatItem from './ChatItem'
-// import { useConversationsSubscription } from '@/service/sockets/useConversationsSubscription'
 import { useChatStore } from '@/services/chatStore'
 import { getAllConversations } from '@/services/api/chatService'
+import { useConversationsSubscription } from '@/services/sockets/useConversationsSubscription'
 
 const ChatList = () => {
     const [isRefreshing, setIsRefreshing] = useState(false)
 
-    // useConversationsSubscription();
+    useConversationsSubscription();
 
     const { conversations } = useChatStore()
 

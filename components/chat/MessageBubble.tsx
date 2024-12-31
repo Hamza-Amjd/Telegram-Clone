@@ -1,11 +1,12 @@
 import { View, Text, Image } from 'react-native';
 import React, { FC } from 'react';
 import dayjs from 'dayjs';
-import TickIcon from '@/assets/icons/tick.png';
 import LoadingDots from './LoadingDots';
 import CustomText from '../ui/CustomText';
 import { messageBubbleStyles } from '@/styles/messageBubbleStyles';
-import { useAuthStore } from '@/service/authStore';
+import { useAuthStore } from '@/services/authStore';
+
+const TickIcon = require('@/assets/icons/tick.png');
 
 const MessageBubble: FC<{ message: any }> = ({ message }) => {
     const { user } = useAuthStore()

@@ -8,8 +8,8 @@ import { RFValue } from 'react-native-responsive-fontsize'
 import { chatStyles } from '@/styles/chatStyles'
 import { router } from 'expo-router'
 import { getLastSeenMessage } from '@/utils/CalculationHelpers'
-import { useUserStatus } from '@/service/sockets/useUserStatus'
-import { useWS } from '@/service/sockets/WSProvider'
+import { useUserStatus } from '@/services/sockets/useUserStatus'
+import { useWS } from '@/services/sockets/WSProvider'
 
 
 

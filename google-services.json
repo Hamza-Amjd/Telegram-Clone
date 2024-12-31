@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "126720712499",
+    "project_id": "telegram-c8219",
+    "storage_bucket": "telegram-c8219.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:126720712499:android:254deb8354883c93ae6846",
+        "android_client_info": {
+          "package_name": "com.hamzaamjd.telegram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "126720712499-f7vv4akgodoefe6ka3bfkbq147jehid0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hamzaamjd.telegram",
+            "certificate_hash": "97dfcee74e4e2513f8a700f9c7c5f6fa3550b21d"
+          }
+        },
+        {
+          "client_id": "126720712499-fv5d4dvinjbqgbcg0rvqbsqs0n3ohj76.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFeHn7pwKbp7r7NXmt1lZr4KnucRTRvWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "126720712499-fv5d4dvinjbqgbcg0rvqbsqs0n3ohj76.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

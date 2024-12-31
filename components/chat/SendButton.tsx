@@ -5,7 +5,7 @@ import useKeyboardOffsetHeight from './helpers/useKeyboardOffsetHeight';
 import { Entypo, FontAwesome6, Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/utils/Constants';
 import { sendButtonStyles } from '@/styles/sendButtonStyles';
-import { useWS } from '@/service/sockets/WSProvider';
+import { useWS } from '@/services/sockets/WSProvider';
 
 
 interface SendButtonProps {
