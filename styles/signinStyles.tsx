@@ -25,7 +25,7 @@ export const siginStyles = StyleSheet.create({
         padding: 15,
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 10,
+        borderRadius: 25,
         backgroundColor: '#fff',
         marginTop: 140,
         width: '90%',

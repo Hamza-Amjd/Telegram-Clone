@@ -8,22 +8,18 @@ export const useUserStatus = (userId: string) => {
     if (socketService && userId) {
       socketService?.emit("subscribeToUsers", [userId]);
       socketService?.emit("GET_USER_STATUS", { userId });
-      const handleStatusUpdate = (statusUpdate: {
-        id: string;
-        is_online: boolean;
-        last_seen: string;
-      }) => {
-        if (statusUpdate?.id === userId) {
-          setIsOnline(statusUpdate?.is_online);
-          setLastSeen(statusUpdate?.last_seen);
-        }
-        socketService.on("USER_LIVE_STATUS", handleStatusUpdate);
-        return () => {
-          socketService?.off("USER_LIVE_STATUS");
-        };
+
+      const handleStatusUpdate = (statusUpdate: {id: string;is_online: boolean;last_seen: string;}) => {
+        setIsOnline(statusUpdate?.is_online);
+        setLastSeen(statusUpdate?.last_seen);
+      };
+
+      socketService.on("USER_LIVE_STATUS", handleStatusUpdate);
+      return () => {
+        socketService?.off("USER_LIVE_STATUS");
       };
     }
-  },[userId,socketService]);
-  
+  }, [userId, socketService]);
+
   return { isOnline, lastSeen };
 };

@@ -9,9 +9,13 @@ import { useAuthStore } from '@/services/authStore';
 const TickIcon = require('@/assets/icons/tick.png');
 
 const MessageBubble: FC<{ message: any }> = ({ message }) => {
+    // const socketService = useWS()
     const { user } = useAuthStore()
     const isMyMessage = message.sender?._id == user?.id;
-    const isMessageRead = message?.isMessageRead;
+    const isMessageRead = message?.is_seen;
+    // if(!isMyMessage && !isMessageRead) {
+    //     socketService.emit('MESSAGE_SEEN', { conversationId: '', messageId: message.id });
+    // }
     return (
         <View
             style={{
